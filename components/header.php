@@ -33,7 +33,9 @@
     <div class="d-flex align-items-center">
         <div class="sesion mx-3">
             <p class="m-0 reducirTexto">Hola, inicia sesión</p>
-            <p class="m-0 reducirTexto"><a href="#">Ingresa</a> | <a href="#">Registrate</a></p>
+            <p class="m-0 reducirTexto">
+                <a href="/ecomerce/pages/login.php">Ingresa</a> | <a href="/ecomerce/pages/login.php">Registrate</a>
+            </p>
         </div>
         <div class="carritoLogo">
             <i class="fa-solid fa-cart-shopping"></i>

@@ -32,6 +32,7 @@ body.layout,
   grid-template-rows: auto auto 1fr auto; /* header, nav, main, footer */
 }
 
+
 /* Header */
 header{
   padding-left: 1em;

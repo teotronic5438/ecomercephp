@@ -1,0 +1,11 @@
+.logeos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    padding: 0.5rem 2rem;
+}
+
+.logeos article {
+    flex: 1 1 300px;
+}
