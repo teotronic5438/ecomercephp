@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+  /* Colores base */
+  --blanco: #FFFFFF;
+  --negro: #000000;
+  --gris-oscuro: #333333;
+
+  /* Colores vivos */
+  --azul-electrico: #007BFF;
+  --verde-lima: #32CD32;
+
+  /* Tonos metálicos */
+  --oro: #FFD700;
+  --plata: #C0C0C0;
+  --bronce: #CD7F32;
+  --cobre: #B87333;
+  --platino: #E5E4E2;
+}
+
+/* Layout grid que empuja el footer hacia abajo */
+body.layout,
+.wrapper {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto; /* header, nav, main, footer */
+}
+
+/* Header */
+header{
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+/* ofertasBancos*/
+.ofertasBancos{
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem; /* espacio entre bloques */
+  padding: 1rem;
+  flex-wrap: wrap; /* para responsive */
+  text-align: center;
+}
+
+.tituloBancos {
+  color: var(--blanco);
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+
+.logosBancos {
+  background-color: var(--blanco);
+  padding: 1rem;
+  border-radius: 20px;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoBanco {
+  width: 200px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(25%);
+  transition: transform 0.3s ease;
+}
+
+
+.logoBanco:hover {
+  transform: scale(1.05);
+  filter: none;
+}
+
+.conoceMas {
+  color: var(--blanco);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Contenido Principal: MAIN*/
+/* main {
+
+} */
+
+/* Footer */
+footer {
+  background-color: var(--color-blanco);
+  color: var(--color-negro);
+  text-align: center;
+  border-top: 1px solid #ddd;
+  padding: 1rem 0;
+}
