@@ -1,10 +1,23 @@
 <?php
-    session_start();
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    // manejo errores creacion usuarios
     $mensaje_error = '';
 
     if (isset($_SESSION['error'])) {
         $mensaje_error = $_SESSION['error'];
         unset($_SESSION['error']);
+    }
+
+
+    // manejo errores logeo usuarios
+    $mensaje_error_logeo = '';
+
+    if (isset($_SESSION['errorLogeo'])) {
+        $mensaje_error_logeo = $_SESSION['errorLogeo'];
+        unset($_SESSION['errorLogeo']);
     }
 ?>
 <!DOCTYPE html>
