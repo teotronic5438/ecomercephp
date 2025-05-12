@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    session_destroy(); // cerramos la sesión para obligar al login
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,8 +23,12 @@
 
         <main class="d-flex flex-column align-items-center">
             <h3 class="text-success">Usuario creado exitosamente!!</h3>
-            <p>Ya puedes iniciar sesion con las nuevas credenciales.</p>
-            <p>En breve seras redirigido a la pagina principal para ver nuestros productos.</p>
+            <p>Ya puedes iniciar sesion con tu nuevo usuario.</p>
+                <script>
+                    setTimeout(() => {
+                        window.location.href = "login.php";
+                    }, 4000);
+                </script>
 
             <?php include dirname(__DIR__) . '/components/spiner.php';?>
             

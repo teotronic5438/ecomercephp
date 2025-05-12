@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    $mensaje_error = '';
+
+    if (isset($_SESSION['error'])) {
+        $mensaje_error = $_SESSION['error'];
+        unset($_SESSION['error']);
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +24,6 @@
 
         <?php include("../components/header.php") ?>
         <?php include dirname(__DIR__) . '/components/nav.php'; ?>
-
         <main class="logeos">
 
             <article class="loginUser">
@@ -31,5 +39,6 @@
 
     </div>
     <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/validacionFormularioLogin.js"></script>
 </body>
 </html>
