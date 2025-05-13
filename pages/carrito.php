@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['producto_id'], $_POST
                 'imagen_url' => $producto['imagen_url']
             ];
 
-            // Inicializar carrito si no existe
+            // Inicializar carrito, la sesion, si no existe
             if (!isset($_SESSION['carrito'])) {
                 $_SESSION['carrito'] = [];
             }
