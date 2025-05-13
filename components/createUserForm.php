@@ -40,5 +40,7 @@
         <input type="tel" class="form-control" id="telefonoUsuario" name="telefonoUsuario" placeholder="Ej. 1123456789" required>
     </div>
 
-    <button type="submit" class="btn btn-primary">Registrarse</button>
+    <div class="text-center d-grid gap-2">
+        <button type="submit" class="btn btn-primary btn-lg">Registrarse</button>
+    </div>
 </form>

@@ -13,7 +13,7 @@ $nombre = htmlspecialchars($_SESSION['usuario_nombre']);
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Bienvenido</title>
+    <title>Confirmacion Logeo</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
 </head>
 <body>

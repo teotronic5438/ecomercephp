@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("conexion.php");
+require_once("../data/conexion.php");
 
 // Base de datos por defecto
 mysqli_query($conexion, "USE enigma");
