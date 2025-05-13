@@ -28,7 +28,9 @@
             <?php endif; ?>
         </div>
         <div class="carritoLogo">
-            <i class="fa-solid fa-cart-shopping"></i>
+            <a href="/ecomerce/carrito/ver.php">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </a>
         </div>
     </div>
 </header>

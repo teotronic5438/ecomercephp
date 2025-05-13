@@ -1,27 +1,24 @@
 <?php
     session_start();
 
-    if (!isset($_POST['id_producto']) || !is_numeric($_POST['id_producto'])) {
-        die("ID de producto inválido.");
-    }
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_producto'], $_POST['cantidad'])) {
+        $id = intval($_POST['id_producto']);
+        $cantidad = max(1, intval($_POST['cantidad']));
 
-    $id = intval($_POST['id_producto']);
-    $cantidad = isset($_POST['cantidad']) && is_numeric($_POST['cantidad']) ? intval($_POST['cantidad']) : 1;
+        if (!isset($_SESSION['carrito'])) {
+            $_SESSION['carrito'] = [];
+        }
 
-    if ($cantidad < 1) $cantidad = 1;
+        // Si ya existe el producto, se suma la cantidad
+        if (isset($_SESSION['carrito'][$id])) {
+            $_SESSION['carrito'][$id] += $cantidad;
+        } else {
+            $_SESSION['carrito'][$id] = $cantidad;
+        }
 
-    // Inicializar el carrito si no existe
-    if (!isset($_SESSION['carrito'])) {
-        $_SESSION['carrito'] = [];
-    }
-
-    // Si ya está en el carrito, sumamos la cantidad
-    if (isset($_SESSION['carrito'][$id])) {
-        $_SESSION['carrito'][$id] += $cantidad;
+        header('Location: ../carrito/ver.php');
+        exit;
     } else {
-        $_SESSION['carrito'][$id] = $cantidad;
+        die("Datos inválidos.");
     }
-
-    // Redirigir al carrito (puede ser a carrito.php o donde prefieras)
-    header("Location: ../pages/carrito.php");
-exit;
+?>
