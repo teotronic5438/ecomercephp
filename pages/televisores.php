@@ -2,6 +2,12 @@
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
+    
+    // obtengo listado de productos de la bbdd
+    require_once('../data/productos/getTelevisores.php');
+
+    $productos = obtenerTelevisores();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +27,8 @@
         <?php include dirname(__DIR__) . '/components/nav.php'; ?>
 
         <main>
-            TELEVISORES
+            <h2 class="my-4 text-center">Televisores</h2>
+            <?php include("../components/grillaTelevisores.php"); ?>
         </main>
 
         <?php include("../components/footer.php") ?>
