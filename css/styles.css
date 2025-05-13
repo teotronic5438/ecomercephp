@@ -119,18 +119,18 @@ footer {
 .card-title {
     font-size: 1.1rem;
 }
-/* Estilo para limitar el título a 2 líneas y centrarlo */
+/* Estilo para limitar el título a 1 líneas y centrarlo */
 .card-title {
     font-size: 1.1rem;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 3.2em; /* Aproximadamente 2 líneas */
+    height: 1.6em; /* Aproximadamente 1 líneas */
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
     -webkit-box-orient: vertical;
 }
 
@@ -138,7 +138,7 @@ footer {
 .card-text {
     font-size: 0.95rem;
     text-align: center;
-    height: 4.8em; /* Aproximadamente 3 líneas */
+    height: 3.2em; /* Aproximadamente 2 líneas - nota: 1.6 por em */
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -158,7 +158,7 @@ footer {
 .card-body .fw-bold {
     text-align: center;
     margin-top: auto;
-    margin-bottom: auto;
+    margin-bottom: 1em;
 }
 
 /* Botón: una línea, centrado verticalmente */
@@ -166,6 +166,22 @@ footer {
     margin-top: auto;
 }
 
+
+
+/******************************
+      PRODUCTO DETALLADO
+******************************/
+/* Para navegadores WebKit (Chrome, Safari, Edge) */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Para Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
 
 
 /******************************
