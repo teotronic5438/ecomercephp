@@ -1,7 +1,7 @@
 <header class="d-flex justify-content-between align-items-center">
     <!-- Logo -->
     <div class="logo">
-        <i class="fa-solid fa-cubes">&nbsp;</i><span>ShopNexus</span>
+        <a href="/ecomerce/index.php"><i class="fa-solid fa-cubes">&nbsp;</i><span>ShopNexus</span></a>
     </div>
 
     <!-- Barra de búsqueda -->
