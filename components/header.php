@@ -16,8 +16,9 @@
     <div class="d-flex align-items-center">
         <div class="sesion mx-3">
             <?php if (isset($_SESSION['usuario_nombre'])): ?>
-                <p class="m-0 reducirTexto">Hola, <?= htmlspecialchars($_SESSION['usuario_nombre']) ?></p>
+                <p class="m-0 reducirTexto">Bienvenio, <?= htmlspecialchars($_SESSION['usuario_nombre']) ?>&nbsp;!</p>
                 <p class="m-0 reducirTexto">
+                    <a href="/ecomerce/pages/perfil.php">Mi perfil</a> | 
                     <a href="/ecomerce/pages/cerrar_sesion.php">Cerrar Sesión</a>
                 </p>
             <?php else: ?>
