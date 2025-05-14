@@ -183,6 +183,16 @@ input[type=number] {
     -moz-appearance: textfield;
 }
 
+/******************************
+  MI PERFIL - DETALLE PEDIDO
+******************************/
+.detalle-pedido {
+    display: none;
+}
+.detalle-activo {
+    display: block !important;
+}
+
 
 /******************************
       OLVIDAR CONTRASEÑA
