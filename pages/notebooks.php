@@ -2,9 +2,14 @@
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
+    
+    // Obtengo listado de productos de la categoría "Notebook"
+    require_once('../data/productos/getNotebook.php');
+
+    $productos = obtenerNotebook();
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +26,8 @@
         <?php include dirname(__DIR__) . '/components/nav.php'; ?>
 
         <main>
-            Notebooks
+            <h2 class="my-4 text-center">Notebooks</h2>
+            <?php include("../components/grillaNotebook.php"); ?>
         </main>
 
         <?php include("../components/footer.php") ?>

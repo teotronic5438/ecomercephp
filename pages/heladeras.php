@@ -2,9 +2,14 @@
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
+    
+    // Obtengo listado de productos de la categoría "Heladeras"
+    require_once('../data/productos/getHeladeras.php');
+
+    $productos = obtenerHeladeras();
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +26,8 @@
         <?php include dirname(__DIR__) . '/components/nav.php'; ?>
 
         <main>
-            HELADERAS
+            <h2 class="my-4 text-center">Heladeras</h2>
+            <?php include("../components/grillaHeladeras.php"); ?>
         </main>
 
         <?php include("../components/footer.php") ?>

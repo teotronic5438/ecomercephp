@@ -57,7 +57,7 @@ $resultado = mysqli_query($conexion, $sql);
                         $pedido_id = $pedido['id'];
 
                         // Obtener detalles del pedido
-                        $sql_detalles = "SELECT pd.cantidad, pd.precio_unitario, pr.nombre
+                        $sql_detalles = "SELECT pd.cantidad, pd.precio_unitario, pr.nombre, pr.descripcion
                                          FROM pedido_detalles pd
                                          JOIN productos pr ON pd.producto_id = pr.id
                                          WHERE pd.pedido_id = $pedido_id";
@@ -87,6 +87,7 @@ $resultado = mysqli_query($conexion, $sql);
                                         <thead>
                                             <tr>
                                                 <th>Producto</th>
+                                                <th>Descripción</th>
                                                 <th>Cantidad</th>
                                                 <th>Precio Unitario</th>
                                                 <th>Subtotal</th>
@@ -96,6 +97,7 @@ $resultado = mysqli_query($conexion, $sql);
                                             <?php while ($detalle = mysqli_fetch_assoc($detalles_resultado)): ?>
                                                 <tr>
                                                     <td><?= htmlspecialchars($detalle['nombre']) ?></td>
+                                                    <td><?= htmlspecialchars($detalle['descripcion']) ?></td>
                                                     <td><?= $detalle['cantidad'] ?></td>
                                                     <td>$<?= number_format($detalle['precio_unitario'], 2) ?></td>
                                                     <td>$<?= number_format($detalle['cantidad'] * $detalle['precio_unitario'], 2) ?></td>

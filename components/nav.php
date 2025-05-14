@@ -34,7 +34,7 @@ $current = basename($_SERVER['SCRIPT_NAME']);
           <a class="nav-link <?= $current == 'lavarropas.php' ? 'active' : '' ?>" href="/ecomerce/pages/lavarropas.php">Lavarropas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link <?= $current == 'contactenos.php' ? 'active' : '' ?>" href="/ecomerce/pages/contactenos.php">Contactenos</a>
+          <a class="nav-link disabled <?= $current == 'contactenos.php' ? 'active' : '' ?>" href="/ecomerce/pages/contactenos.php" aria-disabled="true">Contactenos</a>
         </li>
       </ul>
     </div>
