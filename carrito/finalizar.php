@@ -59,6 +59,7 @@ $stmt_detalle->close();
 unset($_SESSION['carrito']);
 
 // Redirigir o mostrar mensaje
-header("Location: gracias.php?pedido_id=$pedido_id");
+header("Location: /ecomerce/pages/perfil.php?pedido_id=$pedido_id");
 exit;
+
 ?>

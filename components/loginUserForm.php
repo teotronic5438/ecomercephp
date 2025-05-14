@@ -7,7 +7,7 @@
     }
 ?>
 
-<form action="../components/procesar_login.php" method="POST">
+<form action="../components/procesar_login.php<?php echo isset($_GET['redirigir']) ? '?redirigir=' . urlencode($_GET['redirigir']) : ''; ?>" method="POST">
     <div class="mb-3 w-50">
         <label for="emailUsuario" class="form-label">Ingresa tu correo:</label>
         <input type="email" class="form-control" id="emailUsuario" name="emailUsuario" aria-describedby="emailHelp" required>
