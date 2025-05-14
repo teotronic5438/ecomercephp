@@ -2,14 +2,19 @@
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
+    
+    // Obtengo listado de productos de la categoría "Lavarropas"
+    require_once('../data/productos/getLavarropas.php');
+
+    $productos = obtenerHeladeras();
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="./image/svg+xml" href="../img/cubes-solid.svg" />
-    <title>Lavarropas</title>
+    <title>Heladeras</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/styles.css">
@@ -21,7 +26,8 @@
         <?php include dirname(__DIR__) . '/components/nav.php'; ?>
 
         <main>
-            LAVARROPAS
+            <h2 class="my-4 text-center">Lavarropas</h2>
+            <?php include("../components/grillaLavarropas.php"); ?>
         </main>
 
         <?php include("../components/footer.php") ?>
