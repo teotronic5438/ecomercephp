@@ -47,7 +47,13 @@
                         ?>
                             <tr>
                                 <td><?php echo htmlspecialchars($producto['nombre']); ?></td>
-                                <td><?php echo $cantidad; ?></td>
+                                <td>
+                                    <form action="actualizar.php" method="post" class="d-flex">
+                                        <input type="hidden" name="id_producto" value="<?= $id ?>">
+                                        <input type="number" name="cantidad" value="<?= $cantidad ?>" min="1" class="form-control form-control-sm me-2" style="max-width: 80px;">
+                                        <button type="submit" class="btn btn-sm btn-outline-primary">Actualizar</button>
+                                    </form>
+                                </td>
                                 <td>$<?php echo number_format($producto['precio'], 2); ?></td>
                                 <td>$<?php echo number_format($subtotal, 2); ?></td>
                                 <td><a href="eliminar.php?id=<?php echo $id; ?>" class="btn btn-danger btn-sm">Eliminar</a></td>
@@ -60,9 +66,19 @@
                         </tr>
                     </tbody>
                 </table>
+                <div class="row">
+                    <div class="col align-self-start">
+                        <a href="vaciar.php" class="btn btn-outline-danger">Vaciar Carrito</a>
+                        <a href="../index.php" class="btn btn-secondary">Seguir Comprando</a>
+                    </div>
+                    <div class="col align-self-end text-end">
+                        <a href="finalizar.php" class="btn btn-success text-center" onclick="return confirm('¿Estás seguro de finalizar la compra?');">
+                            Finalizar Compra
+                        </a>
+                    </div>
+                </div>
 
-                <a href="vaciar.php" class="btn btn-outline-danger">Vaciar Carrito</a>
-                <a href="../index.php" class="btn btn-secondary">Seguir Comprando</a>
+
             <?php endif; ?>
         </div>
 
